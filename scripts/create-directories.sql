@@ -1,0 +1,6 @@
+-- Este script cria os diretórios necessários para o armazenamento de arquivos.
+-- Certifique-se de que estes diretórios existam no seu ambiente de execução.
+-- Exemplo de comandos para criar os diretórios:
+-- mkdir -p public/templates
+-- mkdir -p public/uploads
+-- mkdir -p public/cards

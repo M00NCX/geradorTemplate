@@ -1,0 +1,7 @@
+-- Este script foi usado para adicionar as colunas foto_x, foto_y, foto_width, foto_height.
+-- Agora, com a adição de nome_x e nome_y, você precisará de um novo script de migração
+-- ou modificar este para incluir as novas colunas.
+-- Exemplo de como seria o script para adicionar nome_x e nome_y:
+-- ALTER TABLE Evento
+-- ADD COLUMN nome_x INT NOT NULL DEFAULT 0,
+-- ADD COLUMN nome_y INT NOT NULL DEFAULT 0;

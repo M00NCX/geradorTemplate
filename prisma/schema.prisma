@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model Evento {
+  id                Int             @id @default(autoincrement())
+  nome_evento       String
+  slug              String          @unique
+  template_url      String
+  campo_extra_label String?
+  foto_x            Int
+  foto_y            Int  
+  foto_width        Int
+  foto_height       Int
+  foto_shape        String          @default("square") // "square" ou "circle"
+  nome_x            Int
+  nome_y            Int
+  nome_font_size    Int             @default(32)
+  nome_font_family  String          @default("Arial") // Nova coluna para fonte
+  participacoes     Participacao[]
+  created_at        DateTime        @default(now())
+  updated_at        DateTime        @updatedAt
+}
+
+model Participacao {
+  id                Int      @id @default(autoincrement())
+  nome              String
+  empresa           String
+  campo_extra_valor String?
+  foto_url          String
+  card_url          String
+  created_at        DateTime @default(now())
+  evento            Evento   @relation(fields: [evento_id], references: [id])
+  evento_id         Int
+}
